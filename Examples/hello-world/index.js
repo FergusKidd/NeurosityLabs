@@ -50,9 +50,14 @@ const main = async () => {
 //  });
 
 // kenesis subscription example
+// this version requires that you train both left and rght hand pinch intents.
+
+notion.kinesis("rightHandPinch").subscribe((intent) => {
+    console.log("Right Pinch!");
+});
 
 notion.kinesis("leftHandPinch").subscribe((intent) => {
-    console.log("Hello World!");
-  });
-  
+    console.log("Left Pinch!");
+});
+
   main();
