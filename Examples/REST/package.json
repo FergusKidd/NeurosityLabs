@@ -1,0 +1,19 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "An example Hello world application from the Neurosity docs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "notion"
+  ],
+  "author": "Hans Berger",
+  "license": "MIT",
+  "dependencies": {
+    "@neurosity/notion": "^5.17.0",
+    "dotenv": "^16.0.2"
+  }
+}
