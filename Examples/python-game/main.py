@@ -57,7 +57,31 @@ pen.goto(0, 250)
 pen.write("Score : 0 High Score : 0", align="center",
 		font=("candara", 24, "bold"))
 
+global colour 
+colour = 'brown'
 
+def callback(data):
+    global colour
+
+    print("data", data)
+    
+    probability = data['probability']
+    print('current calm value is', data['probability'])
+
+    if 0 <= probability <= 0.1:
+        colour = 'red'
+    elif 0.1 <= probability <= 0.2:
+        colour = 'orange'
+    elif 0.2 <= probability <= 0.3:
+        colour = 'yellow'
+    elif 0.3 <= probability <= 0.4:
+        colour = 'green'
+    elif 0.4 <= probability <= 0.5:
+        colour = 'blue'
+    elif 0.5 <= probability <= 0.6:
+        colour = 'purple'
+
+unsubscribe = neurosity.calm(callback)
 
 # assigning key directions
 def group():
@@ -131,7 +155,7 @@ while True:
 		new_segment = turtle.Turtle()
 		new_segment.speed(0)
 		new_segment.shape("square")
-		new_segment.color("orange") # tail colour
+		new_segment.color(colour) # tail colour
 		new_segment.penup()
 		segments.append(new_segment)
 		delay -= 0.001
